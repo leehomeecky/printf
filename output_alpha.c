@@ -34,10 +34,13 @@ int output_alpha(va_list arg)
 	else
 	{
 	/*non-printable character*/
+	my_putchar(*str);
+	/*
 	my_putchar('\\');
 	my_putchar('x');
 	my_putchar((*str / 16) < 10 ? ('0' + (*str / 16)) : ('A' + (*str / 16 - 10)));
 	my_putchar((*str % 16) < 10 ? ('0' + (*str % 16)) : ('A' + (*str % 16 - 10)));
+	*/
 	}
 	str++;
 	}
