@@ -3,19 +3,23 @@
 int (*select_output(char ch))(va_list)
 {
 	OUTS output_funcs[] = {
-		{'i', output_ints},
+/*		{'i', output_ints},*/
 		{'s', output_alpha},
 		{'S', output_alpha},
 		{'c', output_char},
-		{'d', output_ints},
-		{'u', output_unsignedint}, 
-		{'x', output_hexlower},
-		{'X', output_hexupper},
-		{'o', output_octal},
-		{'r', output_r},
-		{'R', output_ROT13},
-		{'b', output_bits},
-		{'p', output_ptraddress},
+/**
+ * {'d', output_ints},
+ * {'u', output_unsignedint}, 
+ */
+/**		
+ * {'x', output_hexlower},
+ * {'X', output_hexupper},
+ * {'o', output_octal},
+ * {'r', output_r},
+ * {'R', output_ROT13},
+ * {'b', output_bits},
+ * {'p', output_ptraddress},
+ */
 	     {'%', output_handle}};
 		/*{'x', print_hex},*/
 		/*{'X', print_hex_big},*/
@@ -27,7 +31,7 @@ int (*select_output(char ch))(va_list)
 		/*{'p', print_address},*/
 		/*{'%', output_handle}*/
 		/*};*/
-	int keys = 14;
+	int keys = 4;
 
 	int j;
 
