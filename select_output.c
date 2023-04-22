@@ -11,7 +11,7 @@ int (*select_output(char ch))(va_list)
 		{'s', output_alpha},
 		{'S', output_alpha},
 		{'c', output_char},
-		{'d', output_ints},
+		{'d', output_ints}};
 
 /*{'u', output_unsignedint},*/
 /*{'x', output_hexlower},*/
@@ -21,7 +21,7 @@ int (*select_output(char ch))(va_list)
  /* {'R', output_ROT13},*/
  /* {'b', output_bits},*/
  /* {'p', output_ptraddress},*/
-{'%', output_handle}};
+/*{'%', output_handle}};*/
 		/*{'x', print_hex},*/
 		/*{'X', print_hex_big},*/
 		/*{'b', print_binary},*/
