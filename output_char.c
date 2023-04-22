@@ -11,7 +11,10 @@
 int output_char(va_list arg)
 {
 	/*writeout(va_arg(arg, int));*/
+	char c = va_arg(arg, int);
+	if (!c)
+		return (0);
 
-	my_putchar(va_arg(arg, int));
+	my_putchar(c);
 	return (1);
 }

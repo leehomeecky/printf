@@ -3,9 +3,10 @@
 
 int main(void)
 {
-printf("%c\n", 'y');
-_printf("%c\n", 'y');
+printf("%%%%\n");
+_printf("%%%%\n");
 printf("this my schoool is hard  %s\n", "Holberton"); 
+
 _printf("this my schoool is hard  %s\n", "Holberton");
 
 _printf("this my schoool is hard  %c\n", 'H');
