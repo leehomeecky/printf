@@ -3,8 +3,6 @@
 
 #include <stdlib.h>
 #include <stdarg.h>
-va_list args;
-const char *f;
 
 /**
  * struct myOutputs - This struct will be used to filter which print
@@ -34,7 +32,8 @@ int output_bits(va_list arg);
 int output_r(va_list arg);
 int output_ROT13(va_list arg);
 int output_octal(va_list arg);
-int _printf(const char *format, ...);int output_ints(va_list arg);
+int _printf(const char *format, ...);
+int output_ints(va_list arg);
 int (*select_output(char c))(va_list);
 int output_unsignedint(va_list arg);
 

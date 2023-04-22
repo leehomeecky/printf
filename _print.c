@@ -27,6 +27,8 @@ return (s[i]);
 int _printf(const char *format, ...)
 {
 	int p_length = 0;
+	va_list args;
+	const char *f;
 
 	va_start(args, format);
 	if (!format)
