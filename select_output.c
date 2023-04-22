@@ -9,9 +9,9 @@ int (*select_output(char ch))(va_list)
 	OUTS output_funcs[] = {
 /*		{'i', output_ints},*/
 		{'s', output_alpha},
-		{'S', output_alpha},
-		{'c', output_char},
-		{'d', output_ints}};
+		/*{'S', output_alpha},*/
+		{'c', output_char}};
+		/*{'d', output_ints}};*/
 
 /*{'u', output_unsignedint},*/
 /*{'x', output_hexlower},*/
