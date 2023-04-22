@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 	if (!format)
 		return (-1);
 
-	while (*format != '\0')
+	while (format != NULL && *format != '\0')
 	{
 		if (*format == '%')
 		{
