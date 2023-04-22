@@ -17,11 +17,11 @@ int output_alpha(va_list arg)
 	int count_alpha;
 
 	count_alpha = 0;
-	if (str == NULL)
+	if (str == "")
 		str = "(nil)";
 	if (!str)
 	{
-	return (-1);
+	return (0);
 	}
 
 	while (*str != '\0')
