@@ -31,9 +31,9 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 	if (!format)
-		return (-1);
+		return (0);
 
-	while (*format != '\0')
+	while (format != NULL && *format != '\0')
 	{
 		if (*format == '%')
 		{
