@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * select_output - select output
+ * @ch: character
+ * Return: int
+ */
 int (*select_output(char ch))(va_list)
 {
 	OUTS output_funcs[] = {
@@ -8,26 +12,23 @@ int (*select_output(char ch))(va_list)
 		{'S', output_alpha},
 		{'c', output_char},
 		{'d', output_ints},
-/**
- * {'u', output_unsignedint}, 
- */
-/**		
- * {'x', output_hexlower},
- * {'X', output_hexupper},
- * {'o', output_octal},
- * {'r', output_r},
- * {'R', output_ROT13},
- * {'b', output_bits},
- * {'p', output_ptraddress},
- */
-	     {'%', output_handle}};
+
+/*{'u', output_unsignedint},*/
+/*{'x', output_hexlower},*/
+ /* {'X', output_hexupper},*/
+ /* {'o', output_octal},*/
+ /* {'r', output_r},*/
+ /* {'R', output_ROT13},*/
+ /* {'b', output_bits},*/
+ /* {'p', output_ptraddress},*/
+{'%', output_handle}};
 		/*{'x', print_hex},*/
 		/*{'X', print_hex_big},*/
 		/*{'b', print_binary},*/
 		/*{'o', print_octal},*/
-		/*{'R', print_rot13},
-		*//*{'r', print_rev},
-		*//*{'S', print_bigS},*/
+		/*{'R', print_rot13},*/
+		/*{'r', print_rev},*/
+		/*{'S', print_bigS},*/
 		/*{'p', print_address},*/
 		/*{'%', output_handle}*/
 		/*};*/
@@ -35,7 +36,7 @@ int (*select_output(char ch))(va_list)
 
 	int j;
 
-	for (j= 0; j < keys; j++)
+	for (j = 0; j < keys; j++)
 		if (output_funcs[j].spec == ch)
 			return (output_funcs[j].selectprint);
 
