@@ -17,6 +17,8 @@ int output_alpha(va_list arg)
 	int count_alpha;
 
 	count_alpha = 0;
+	if (str == NULL)
+		str = "(nil)";
 	if (!str)
 	{
 	return (-1);
@@ -44,5 +46,8 @@ int output_alpha(va_list arg)
 	/*}*/
 	str++;
 	}
+	if (!str)
+		return (-1);
+
 	return (count_alpha);
 }

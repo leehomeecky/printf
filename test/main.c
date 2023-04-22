@@ -5,7 +5,11 @@ int main(void)
 {
 printf("%c\n", 'y');
 _printf("%c\n", 'y');
-printf("%s\n", "yiej");                _printf("%s\n", "jejjej");
+printf("this my schoool is hard  %s\n", "Holberton"); 
+_printf("this my schoool is hard  %s\n", "Holberton");
 
+_printf("this my schoool is hard  %c\n", 'H');
+
+printf("this my schoool is hard  %c\n", 'H');
 	return (0);
 }
