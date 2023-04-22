@@ -5,5 +5,7 @@ int main(void)
 {
 printf("%c\n", 'y');
 _printf("%c\n", 'y');
+printf("%s\n", "yiej");                _printf("%s\n", "jejjej");
+
 	return (0);
 }

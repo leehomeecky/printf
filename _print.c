@@ -53,13 +53,13 @@ p_length += output(args);
 }
 else
 			{
-		writeout(*format);
+		_putchar(*format);
 		p_length++;
 			}
 		}
 		else
 		{
-		writeout(*format);
+		_putchar(*format);
 		p_length++;
 		}
 		format++;
