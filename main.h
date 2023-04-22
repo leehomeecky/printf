@@ -22,6 +22,8 @@ typedef struct myOutputs
 int (*output)(va_list arg);
 int my_putchar(char c);
 int writeout(char ch);
+char cfmt(const char *s);
+int _printf(const char *format, ...);
 int output_alpha(va_list arg);
 int output_handle(va_list arg);
 int output_hexlower(va_list arg);

@@ -1,7 +1,9 @@
 #include "main.h"
 /**
  * cfmt - check for specifier
+ * Description: check specifier
  * @s: format
+ * Return: format
  */
 char cfmt(const char *s)
 {
@@ -18,6 +20,7 @@ return (s[i]);
 }
 /**
  * _printf - Printf function
+ * Description: custom _print
  * @format: format.
  * Return: fomatted
  */
@@ -34,18 +37,13 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 		format++;
-/**	
- * flags = flagtype(*format);
- * f = format;
- * while (flags)
- * {
- * format = flags(f, cfmt(f), args)
- * p_length++;
- * break;
- * }
- */
-
-output = select_output(*format);
+ /* flags = flagtype(*format);*/
+/* f = format;*/
+/* * while (flags) {*/
+/* format = flags(f, cfmt(f), args)*/
+/* p_length++;*/
+/* break;}*/
+		output = select_output(*format);
 if (output)
 {
 	va_start(args, format);
