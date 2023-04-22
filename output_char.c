@@ -4,8 +4,7 @@
 
 /**
  * output_char - displays a character
- * @l: va_list arguments from _printf
- * @f: pointer to the struct flags that determines
+ * @arg: arguements
  * if a flag is passed to _printf
  * Return: number of char printed
  */
