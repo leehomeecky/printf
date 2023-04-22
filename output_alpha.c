@@ -25,23 +25,23 @@ int output_alpha(va_list arg)
 	while (*str != '\0')
 	{
 
-	if (*str >= 32 && *str < 127)
-	{
+	/*if (*str >= 32 && *str < 127)*/
+	/*{*/
 	/*printable character*/
 	count_alpha += my_putchar(*str);
 
-	}
-	else
-	{
+	/*}*/
+	/*else*/
+	/*{*/
 	/*non-printable character*/
-	my_putchar(*str);
-	/*
-	my_putchar('\\');
-	my_putchar('x');
-	my_putchar((*str / 16) < 10 ? ('0' + (*str / 16)) : ('A' + (*str / 16 - 10)));
-	my_putchar((*str % 16) < 10 ? ('0' + (*str % 16)) : ('A' + (*str % 16 - 10)));
-	*/
-	}
+/*	my_putchar(*str);*/
+	/*my_putchar('\\');*/
+	/*my_putchar('x');*/
+	/*my_putchar((*str / 16) < 10 ? ('0' + (*str / 16)) : */
+	 /* ('A' + (*str / 16 - 10)));*/
+	/*my_putchar((*str % 16) < 10 ? ('0' + (*str % 16)) : */
+	 /* ('A' + (*str % 16 - 10)));*/
+	/*}*/
 	str++;
 	}
 	return (count_alpha);
