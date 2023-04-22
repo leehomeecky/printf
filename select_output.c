@@ -7,8 +7,8 @@ int (*select_output(char ch))(va_list)
 		{'s', output_alpha},
 		{'S', output_alpha},
 		{'c', output_char},
+		{'d', output_ints},
 /**
- * {'d', output_ints},
  * {'u', output_unsignedint}, 
  */
 /**		
