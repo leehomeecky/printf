@@ -11,7 +11,6 @@
  */
 int output_char(va_list arg)
 {
-	
-	putchar(va_arg(arg, int));
+	writeout(va_arg(arg, int));
 	return (1);
 }

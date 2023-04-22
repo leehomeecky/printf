@@ -34,14 +34,17 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 		format++;
-	flags = flagtype(*format);
-		f = format;
-		while (flags)
-		{
-			format = flags(f, cfmt(f), args);
-		p_length++;
-		break;
-			}
+/**	
+ * flags = flagtype(*format);
+ * f = format;
+ * while (flags)
+ * {
+ * format = flags(f, cfmt(f), args)
+ * p_length++;
+ * break;
+ * }
+ */
+
 output = select_output(*format);
 if (output)
 {
