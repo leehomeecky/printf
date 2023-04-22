@@ -12,6 +12,7 @@ int output_char(va_list arg)
 {
 	/*writeout(va_arg(arg, int));*/
 	char c = va_arg(arg, int);
+
 	if (!c)
 		return (0);
 
