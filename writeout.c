@@ -4,7 +4,7 @@
 
 int writeout(char ch)
 {
-	static char buffer[BUFF_SIZE];
+	static char buffer[78];
 int buffpos;
 
 buffpos = 0;

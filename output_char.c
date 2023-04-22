@@ -13,6 +13,6 @@ int output_char(va_list arg)
 {
 	/*writeout(va_arg(arg, int));*/
 
-	_putchar(va_arg(arg, int));
+	my_putchar(va_arg(arg, int));
 	return (1);
 }

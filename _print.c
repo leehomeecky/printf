@@ -53,17 +53,18 @@ p_length += output(args);
 }
 else
 			{
-		_putchar(*format);
+		my_putchar(*format);
 		p_length++;
 			}
 		}
 		else
 		{
-		_putchar(*format);
+		my_putchar(*format);
 		p_length++;
 		}
 		format++;
 	}
 	va_end(args);
+	my_putchar('\n');
 	return (p_length);
 }

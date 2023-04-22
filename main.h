@@ -5,7 +5,7 @@
 #include <stdarg.h>
 va_list args;
 const char *f;
-#define BUFF_SIZE 1024
+/*#define BUFF_SIZE 1024*/
 /**
  * struct myOutputs - This struct will be used to filter which print
  * function for i,c,s,d,x,g,f......
@@ -42,7 +42,7 @@ const char * isHash(const char * c, char sp, va_list h);
 const char * isSpace(const char * c, char sp, va_list i);
 const char * isZerocustom(const char * c, char sp, va_list arg);
 const char * isZeroflot(const char * c, char sp, double arg);
-int _putchar(char c);
+int my_putchar(char c);
 int writeout(char ch);
 int output_alpha(va_list arg);
 int output_handle(va_list arg);
