@@ -7,20 +7,20 @@ va_list args;
 const char *f;
 
 /**
- * struct myOutputs - This struct will be used to filter which print
- * function for i,c,s,d,x,g,f......
+ * struct print_format - This struct will be used to filter which print
+ * function for i,c,s,d,x,X,o,p,u
  * * @spec: % format specifier to use
  * @selectprint: function pointer to select the correct printer
  */
-typedef struct myOutputs
+typedef struct print_formart
 {
-	char spec;
-	int (*selectprint)(va_list arg);
-} OUTS;
+	char *spec;
+	int (*selectprint)(const char *, va_list arg);
+} PrtFmt;
 
 
-int (*output)(va_list arg);
-int my_putchar(char c);
+int (*output)(const char *, va_list arg);
+int my_putchar(const char c);
 int writeout(char ch);
 int output_alpha(va_list arg);
 int output_handle(va_list arg);

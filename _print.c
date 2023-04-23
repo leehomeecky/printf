@@ -1,20 +1,46 @@
 #include "main.h"
 /**
+ * is_flag - function to check for flags
+ *
+ * @s: string to check
+ *
+ * Return: true || false
+ */
+
+int is_flag(const char s)
+{
+	char flags[] = {'-', '#', '0', 'l', 'h', '.', '+', '\0'};
+	int i;
+
+	if (s >= '0' && s <= '9')
+		return (1);
+	for (i = 0; flags[i] != '\0'; i++)
+		if (s == flags[i])
+			return (1);
+	return (0);
+}
+
+
+/**
  * cfmt - check for specifier
  * @s: format
+ *
+ * Return: format specifier function
  */
-char cfmt(const char *s)
+int (*cfmt(const char **s))(const char *, va_list)
 {
-	int i = 0;
+	int i, len = 2;
+	PrtFmt prt_fmt[] = {
+				{"s", output_alpha},
+				{"c", output_char}
+			};
 
-	while (1)
-	{
-		if (s[i] == 's' || s[i] == 'd' || s[i] == 'i' ||
-s[i] == 'x' || s[i] == 'X' || s[i] == 'o' || s[i] == 'f')
-		break;
-i++;
-}
-return (s[i]);
+	while (is_flag(**s))
+		(*s)++;
+	for (i = 0; i < len; i++)
+		if (*(s[i]) == *((prt_fmt + i)->spec))
+		return ((prt_fmt + i)->selectprint);
+	return (NULL);
 }
 /**
  * _printf - Printf function
@@ -23,46 +49,38 @@ return (s[i]);
  */
 int _printf(const char *format, ...)
 {
-	int p_length = 0;
+	const char *check1, *check2;
+	int p_length = 0, i = 0;
+
+	check1 = check2 = format;
 
 	va_start(args, format);
 	if (!format)
 		return (-1);
 
-	while (*format != '\0')
+	while (*check1 != '\0')
 	{
-		if (*format == '%')
+		if (*check1 == '%')
 		{
-		format++;
-/**	
- * flags = flagtype(*format);
- * f = format;
- * while (flags)
- * {
- * format = flags(f, cfmt(f), args)
- * p_length++;
- * break;
- * }
- */
-
-output = select_output(*format);
-if (output)
-{
-	va_start(args, format);
-p_length += output(args);
-}
-else
+			check2 = check1 + 1;
+			output = cfmt(&check2);
+			if (output)
 			{
-		my_putchar(*format);
-		p_length++;
+			p_length += output(check1, args);
+			check1 = check2;
+			}
+			else
+			{
+			my_putchar(*check1);
+			p_length++;
 			}
 		}
 		else
 		{
-		my_putchar(*format);
+		my_putchar(*check1);
 		p_length++;
 		}
-		format++;
+		check1++;
 	}
 	va_end(args);
 	return (p_length);
