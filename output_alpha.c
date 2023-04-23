@@ -12,16 +12,16 @@
 int output_alpha(va_list arg)
 {
 	char *str = va_arg(arg, char *);
-
-	/*(void)f; */
 	int count_alpha;
 
 	count_alpha = 0;
 	if (str == NULL)
 		str = "(nil)";
+
+	/*str = "(nil)";*/
 	if (!str)
 	{
-	return (0);
+	return (-1);
 	}
 
 	while (*str != '\0')
