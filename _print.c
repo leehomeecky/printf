@@ -48,6 +48,7 @@ int (*cfmt(const char **s))(const char *, va_list)
  *
  * @s: pointer to sting pointer
  * @no_perc: number of percentage counted
+ * @args: variable argument
  *
  * Return: length of printed string
  */
