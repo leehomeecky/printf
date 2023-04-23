@@ -1,7 +1,8 @@
 #include <stdio.h>
-#include "../main"
+#include "../main.h"
 
-
+int main()
+{
 
 
 
