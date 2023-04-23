@@ -18,16 +18,29 @@ typedef struct print_formart
 	int (*selectprint)(const char *, va_list arg);
 } PrtFmt;
 
+/**
+ * struct flag_function - a stucture to filter the approprate flag function
+ *
+ * @flag: the falg
+ * @flag_opt - fuction for the flag operation
+ */
+
+typedef struct flag_function
+{
+	char *flag;
+	int (*flag_opt)(const char **);
+} FlagFunc;
+
 
 int (*output)(const char *, va_list arg);
 int my_putchar(const char c);
 int writeout(char ch);
-int output_alpha(va_list arg);
+int output_alpha(const char *, va_list arg);
 int output_handle(va_list arg);
 int output_hexlower(va_list arg);
 int output_hexupper(va_list arg);
 int output_ptraddress(va_list arg);
-int output_char(va_list arg);
+int output_char(const char *, va_list arg);
 int output_bits(va_list arg);
 int output_r(va_list arg);
 int output_ROT13(va_list arg);
