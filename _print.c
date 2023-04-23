@@ -51,7 +51,7 @@ if (isp > 0)
 	format = cfmt(f);
 
 p_length += isp;
-if (isp == 0)
+if (isp <= 0)
 	return (-1);
 }
 else
