@@ -38,7 +38,7 @@ int (*cfmt(const char **s))(const char *, va_list)
 	while (is_flag(**s))
 		(*s)++;
 	for (i = 0; i < len; i++)
-		if (*(s[i]) == *((prt_fmt + i)->spec))
+		if (**s == *((prt_fmt + i)->spec))
 		return ((prt_fmt + i)->selectprint);
 	return (NULL);
 }
@@ -50,7 +50,9 @@ int (*cfmt(const char **s))(const char *, va_list)
 int _printf(const char *format, ...)
 {
 	const char *check1, *check2;
-	int p_length = 0, i = 0;
+	int p_length = 0;
+	va_list args;
+	int (*output)(const char *, va_list arg);
 
 	check1 = check2 = format;
 
