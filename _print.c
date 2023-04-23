@@ -52,7 +52,7 @@ if (isp > 0)
 
 p_length += isp;
 if (isp <= 0)
-	return (-1);
+//	return (-1);
 }
 else
 {
