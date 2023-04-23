@@ -63,7 +63,5 @@ else
 		format++;
 	}
 	va_end(args);
-my_putchar('\n');
-p_length++;
-	return (p_length);
+	return (-1);
 }
