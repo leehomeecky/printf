@@ -77,7 +77,7 @@ int percent_handler(const char **s, va_list args, int no_perc)
 	}
 	else
 	{
-		if (*check2 == '%')
+		if (*check2 == '%' && (no_perc % 2) == 1)
 		{
 			*s = check2;
 			p_length += percent_handler(s, args, no_perc);
