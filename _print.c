@@ -63,5 +63,5 @@ else
 		format++;
 	}
 	va_end(args);
-	return (-1);
+	return (p_length);
 }
