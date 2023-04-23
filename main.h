@@ -3,7 +3,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 /**
  * struct myOutputs - This struct will be used to filter which print
  * function for i,c,s,d,x,g,f......
@@ -16,7 +16,7 @@ typedef struct myOutputs
 	int (*selectprint)(va_list arg, const char *f);
 } OUTS;
 
-
+int output_percent(va_list arg, const char *k);
 int (*output)(va_list arg, const char *f);
 int my_putchar(char c);
 const char *cfmt(const char *s);

@@ -11,11 +11,14 @@ const char *cfmt(const char *s)
 	while (1)
 	{
 		if (*s == 's' || *s == 'd' || *s == 'i' ||
-*s == 'x' || *s == 'X' || *s == 'o' || *s == 'f' || *s == 'c')
+*s == 'x' || *s == 'X' || *s == 'o' || *s == 'f' || *s == 'c' || *s == '%')
 			break;
 
 		s++;
 	}
+int len = strlen(s);
+if (*s == '%')
+	s = s + (len - 1);
 
 return (s);
 }

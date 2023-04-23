@@ -10,8 +10,8 @@ int (*select_output(char ch))(va_list, const char *f)
 /*		{'i', output_ints},*/
 		{'s', output_alpha},
 		/*{'S', output_alpha},*/
-		{'c', output_char}};
-		/*{'d', output_ints}};*/
+		{'c', output_char},
+		{'%', output_percent}};
 
 /*{'u', output_unsignedint},*/
 /*{'x', output_hexlower},*/
