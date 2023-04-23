@@ -1,8 +1,8 @@
-#ifndef MAIN_H
-#define MAIN_H
-
-#include <stdlib.h>
+#ifndef _MAIN_H_
+#define _MAIN_H_
 #include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * struct myOutputs - This struct will be used to filter which print
