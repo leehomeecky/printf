@@ -21,7 +21,6 @@ int (*output)(va_list arg);
 int my_putchar(char c);
 char cfmt(const char *s);
 int output_alpha(va_list arg);
-/*int output_handle(va_list arg);*/
 int output_char(va_list arg);
 int _printf(const char *format, ...);
 int (*select_output(char c))(va_list);
