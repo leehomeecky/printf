@@ -61,7 +61,7 @@ int percent_handler(const char **s, va_list args, int no_perc)
 	check1 = check2 = *s;
 	for (; *check1 == '%'; check1++)
 		no_perc++;
-	check2 = check1 + 1;
+	check2 = check1;
 	output = cfmt(&check2);
 	if (output)
 	{
