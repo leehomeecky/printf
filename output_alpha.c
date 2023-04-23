@@ -7,13 +7,12 @@ const char *cfmt1(const char *s);
  */
 const char *cfmt1(const char *s)
 {
-	while (*s == '0' ||
-			*s == '#' || *s == '+' || *s == '-' || *s == ' ' ||
-*s == '#')
+	while ((*s >= '0' && *s <= '9')
+			|| *s == '#' || *s == '+' || *s == '-' || *s == ' ')
 	{
 		s++;
 	}
-return (s);
+	return (s);
 }
 /**
  * output_alpha - ====,
@@ -26,7 +25,7 @@ return (s);
 int output_alpha(va_list arg, const char *b)
 {
 	const char *f;
-char *str = va_arg(arg, char *);
+	char *str = va_arg(arg, char *);
 	int count;
 
 	count = 0;
@@ -35,26 +34,24 @@ char *str = va_arg(arg, char *);
 
 	if (!str)
 	{
-	return (0);
+		return (0);
 	}
-while (*b != '\0' && *b != 's')
-{
-	f = cfmt1(b);
-	if (*f == 's')
-		break;
-	b = f;
-	count += my_putchar(*b);
-	b++;
-}
-if (*b == 's')
-{
-	while (*str != '\0')
+	while (*b != '\0' && *b != 's')
 	{
-	/*printable character*/
-	count += my_putchar(*str);
-	str++;
+		f = cfmt1(b);
+		if (*f == 's')
+			break;
+
+		b = f;
+		count += my_putchar(*b);
+		b++;
 	}
-}
+		while (*str != '\0')
+		{
+			/*printable character*/
+			count += my_putchar(*str);
+			str++;
+		}
 
 	return (count);
 }

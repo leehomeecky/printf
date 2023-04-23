@@ -7,7 +7,7 @@
 
 const char *cfmt2(const char *s)
 {
-	while (*s == '0' ||
+	while ((*s >= '0' && *s <= '9') ||
 			*s == '#' || *s == '+' || *s == '-' || *s == ' ' || *s == '#')
 	{
 		s++;
@@ -40,9 +40,6 @@ int output_char(va_list arg, const char *s)
 		count += my_putchar(*s);
 		s++;
 	}
-	if (*s == 'c')
-	{
 		count += my_putchar(c);
-	}
 	return (count);
 }
