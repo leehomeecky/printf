@@ -21,7 +21,7 @@ int output_alpha(va_list arg)
 	/*str = "(nil)";*/
 	if (!str)
 	{
-	return (-1);
+	return (0);
 	}
 
 	while (*str != '\0')

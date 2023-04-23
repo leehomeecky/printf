@@ -26,7 +26,7 @@ return (s[i]);
  */
 int _printf(const char *format, ...)
 {
-	int p_length = 0;
+	int isp,  p_length = 0;
 	va_list args;
 
 	va_start(args, format);
@@ -48,11 +48,14 @@ int _printf(const char *format, ...)
 if (output)
 {
 	va_start(args, format);
-p_length += output(args);
+isp += output(args);
+p_length += isp;
+if (isp == 0)
+	return (-1);
 }
 else
-			{
-				p_length += my_putchar(*format);
+{
+	p_length += my_putchar(*format);
 			}
 		}
 		else
