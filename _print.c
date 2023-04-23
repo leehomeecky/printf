@@ -57,8 +57,7 @@ else
 		}
 		else
 		{
-		my_putchar(*format);
-		p_length++;
+	p_length += my_putchar(*format);
 		}
 		format++;
 	}
