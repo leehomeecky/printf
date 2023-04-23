@@ -38,10 +38,10 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 		format++;
- /* flags = flagtype(*format);*/
+ /* fls = fltype(*format);*/
 /* f = format;*/
-/* * while (flags) {*/
-/* format = flags(f, cfmt(f), args)*/
+/* * while (fls) {*/
+/* format = fls(f, cfmt(f), args)*/
 /* p_length++;*/
 /* break;}*/
 		output = select_output(*format);
