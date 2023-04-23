@@ -84,7 +84,7 @@ int percent_handler(const char **s, va_list args, int no_perc)
 		}
 		else
 		{
-			for (i = 0; i < (no_perc / 2); i++)
+			for (i = 0; i < (no_perc / 2)  + (no_perc % 2); i++)
 				my_putchar('%');
 			*s = check1 - 1;
 		}
