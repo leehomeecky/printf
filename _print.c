@@ -66,8 +66,11 @@ int percent_handler(const char **s, va_list args, int no_perc)
 	output = cfmt(&check2);
 	if (output)
 	{
-		for (i = 0; i < (no_perc / 2); i++, p_length++)
+		for (i = 0; i < (no_perc / 2); i++)
+		{
 			my_putchar('%');
+			p_length++;
+		}
 		if ((no_perc % 2) == 1)
 		{
 			p_length += output(check1, args);
@@ -79,14 +82,14 @@ int percent_handler(const char **s, va_list args, int no_perc)
 	else
 	{
 		if (*check2 == '%' && (no_perc % 2) == 1)
-		{
-			*s = check2;
-			p_length += percent_handler(s, args, no_perc);
-		}
+			p_length += percent_handler(&check2, args, no_perc);
 		else
 		{
-		for (i = 0; i < (no_perc / 2)  + (no_perc % 2); i++, p_length++)
+		for (i = 0; i < (no_perc / 2)  + (no_perc % 2); i++)
+		{
 			my_putchar('%');
+			p_length++;
+		}
 			*s = check1 - 1;
 		}
 	}
