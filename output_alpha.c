@@ -1,53 +1,60 @@
 #include "main.h"
-
+const char *cfmt1(const char *s);
 /**
- * output_alpha - a function to print out the character and count the numbers,
- * of printable characters
- *
+ * cfmt1 - ======
+ * @s: --====
+ * Return: ====
+ */
+const char *cfmt1(const char *s)
+{
+	while (*s == '0' ||
+			*s == '#' || *s == '+' || *s == '-' || *s == ' ' ||
+*s == '#')
+	{
+		s++;
+	}
+return (s);
+}
+/**
+ * output_alpha - ====,
+ * of printable character
  * @arg: variable value argument
- *
- * Return: numbers of printed characters || -1
+ * @b: ===
+ * Return: numbers of printed characters
  */
 
-int output_alpha(va_list arg)
+int output_alpha(va_list arg, const char *b)
 {
-	char *str = va_arg(arg, char *);
-	int count_alpha;
+	const char *f;
+char *str = va_arg(arg, char *);
+	int count;
 
-	count_alpha = 0;
+	count = 0;
 	if (str == NULL)
 		str = "(null)";
 
-	/*str = "(nil)";*/
 	if (!str)
 	{
 	return (0);
 	}
-
+while (*b != '\0' && *b != 's')
+{
+	f = cfmt1(b);
+	if (*f == 's')
+		break;
+	b = f;
+	count += my_putchar(*b);
+	b++;
+}
+if (*b == 's')
+{
 	while (*str != '\0')
 	{
-
-	/*if (*str >= 32 && *str < 127)*/
-	/*{*/
 	/*printable character*/
-	count_alpha += my_putchar(*str);
-
-	/*}*/
-	/*else*/
-	/*{*/
-	/*non-printable character*/
-/*	my_putchar(*str);*/
-	/*my_putchar('\\');*/
-	/*my_putchar('x');*/
-	/*my_putchar((*str / 16) < 10 ? ('0' + (*str / 16)) : */
-	 /* ('A' + (*str / 16 - 10)));*/
-	/*my_putchar((*str % 16) < 10 ? ('0' + (*str % 16)) : */
-	 /* ('A' + (*str % 16 - 10)));*/
-	/*}*/
+	count += my_putchar(*str);
 	str++;
 	}
-	if (!str)
-		return (-1);
+}
 
-	return (count_alpha);
+	return (count);
 }

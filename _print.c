@@ -1,22 +1,23 @@
 #include "main.h"
+const char *cfmt(const char *s);
 /**
  * cfmt - check for specifier
  * Description: check specifier
  * @s: format
  * Return: format
  */
-char cfmt(const char *s)
+const char *cfmt(const char *s)
 {
-	int i = 0;
-
 	while (1)
 	{
-		if (s[i] == 's' || s[i] == 'd' || s[i] == 'i' ||
-s[i] == 'x' || s[i] == 'X' || s[i] == 'o' || s[i] == 'f')
-		break;
-i++;
-}
-return (s[i]);
+		if (*s == 's' || *s == 'd' || *s == 'i' ||
+*s == 'x' || *s == 'X' || *s == 'o' || *s == 'f' || *s == 'c')
+			break;
+
+		s++;
+	}
+
+return (s);
 }
 /**
  * _printf - Printf function
@@ -28,6 +29,7 @@ int _printf(const char *format, ...)
 {
 	int isp,  p_length = 0;
 	va_list args;
+	const char *f;
 
 	va_start(args, format);
 	if (format == NULL)
@@ -39,16 +41,15 @@ int _printf(const char *format, ...)
 		{
 		format++;
  /* fls = fltype(*format);*/
-/* f = format;*/
-/* * while (fls) {*/
-/* format = fls(f, cfmt(f), args)*/
-/* p_length++;*/
-/* break;}*/
-		output = select_output(*format);
+f = format;
+		output = select_output(*(cfmt(f)));
 if (output)
 {
-	va_start(args, format);
-isp += output(args);
+/*	va_start(args, format);*/
+isp += output(args, format);
+if (isp > 0)
+	format = cfmt(f);
+
 p_length += isp;
 if (isp == 0)
 	return (-1);
@@ -56,13 +57,13 @@ if (isp == 0)
 else
 {
 	p_length += my_putchar(*format);
-			}
-		}
-		else
-		{
+}
+}
+else
+{
 	p_length += my_putchar(*format);
-		}
-		format++;
+}
+format++;
 	}
 	va_end(args);
 	return (p_length);

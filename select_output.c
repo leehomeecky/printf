@@ -4,7 +4,7 @@
  * @ch: character
  * Return: int
  */
-int (*select_output(char ch))(va_list)
+int (*select_output(char ch))(va_list, const char *f)
 {
 	OUTS output_funcs[] = {
 /*		{'i', output_ints},*/

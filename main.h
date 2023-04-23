@@ -13,16 +13,16 @@
 typedef struct myOutputs
 {
 	char spec;
-	int (*selectprint)(va_list arg);
+	int (*selectprint)(va_list arg, const char *f);
 } OUTS;
 
 
-int (*output)(va_list arg);
+int (*output)(va_list arg, const char *f);
 int my_putchar(char c);
-char cfmt(const char *s);
-int output_alpha(va_list arg);
-int output_char(va_list arg);
+const char *cfmt(const char *s);
+int output_alpha(va_list arg, const char *f);
+int output_char(va_list arg, const char *f);
 int _printf(const char *format, ...);
-int (*select_output(char c))(va_list);
+int (*select_output(char c))(va_list, const char *f);
 
 #endif
