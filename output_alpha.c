@@ -16,7 +16,7 @@ int output_alpha(va_list arg)
 
 	count_alpha = 0;
 	if (str == NULL)
-		str = "(nil)";
+		str = "(null)";
 
 	/*str = "(nil)";*/
 	if (!str)

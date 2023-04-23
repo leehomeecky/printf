@@ -4,6 +4,9 @@ int main() {
     char str[] = "Hello, world!";
     char c = 'X';
 
+//  printf("%\n");                            // _printf("%\n");
+_printf("%5s", "gg");    
+    
     // Test case for %s specifier
     printf("Test case for %%s specifier:\n");
     printf("String: %s\n", str);
