@@ -42,6 +42,56 @@ int (*cfmt(const char **s))(const char *, va_list)
 		return ((prt_fmt + i)->selectprint);
 	return (NULL);
 }
+
+/**
+ * percent_handler - a finction to handle percentage.
+ *
+ * @s: pointer to sting pointer
+ * @no_perc: number of percentage counted
+ *
+ * Return: length of printed string
+ */
+
+int percent_handler(const char **s, va_list args, int no_perc)
+{
+	int i, p_length = 0;
+	const char *check1, *check2;
+	int (*output)(const char *, va_list arg);
+
+	check1 = check2 = *s;
+	for (; *check1 == '%'; check1++)
+		no_perc++;
+	check2 = check1 + 1;
+	output = cfmt(&check2);
+	if (output)
+	{
+		for (i = 0; i < (no_perc / 2); i++)
+			my_putchar('%');
+		if ((no_perc % 2) == 1)
+		{
+			p_length += output(check1, args);
+			*s = check2;
+		}
+		else
+		*s = check1 - 1;
+	}
+	else
+	{
+		if (*check2 == '%')
+		{
+			*s = check2;
+			p_length += percent_handler(s, args, no_perc);
+		}
+		else
+		{
+			for (i = 0; i < (no_perc / 2); i++)
+				my_putchar('%');
+			*s = check1 - 1;
+		}
+	}
+	return (p_length);
+}
+
 /**
  * _printf - Printf function
  * @format: format.
@@ -49,40 +99,26 @@ int (*cfmt(const char **s))(const char *, va_list)
  */
 int _printf(const char *format, ...)
 {
-	const char *check1, *check2;
+	const char *check;
 	int p_length = 0;
 	va_list args;
-	int (*output)(const char *, va_list arg);
 
-	check1 = check2 = format;
-
+	check = format;
 	va_start(args, format);
+
 	if (!format)
 		return (-1);
 
-	while (*check1 != '\0')
+	while (*check != '\0')
 	{
-		if (*check1 == '%')
-		{
-			check2 = check1 + 1;
-			output = cfmt(&check2);
-			if (output)
-			{
-			p_length += output(check1, args);
-			check1 = check2;
-			}
-			else
-			{
-			my_putchar(*check1);
-			p_length++;
-			}
-		}
+		if (*check == '%')
+			p_length += percent_handler(&check, args, 0);
 		else
 		{
-		my_putchar(*check1);
+		my_putchar(*check);
 		p_length++;
 		}
-		check1++;
+		check++;
 	}
 	va_end(args);
 	return (p_length);
