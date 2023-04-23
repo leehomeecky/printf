@@ -27,7 +27,7 @@ return (s);
  */
 int _printf(const char *format, ...)
 {
-	int isp,  p_length = 0;
+	int isp,  p_length = -1;
 	va_list args;
 	const char *f;
 
