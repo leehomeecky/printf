@@ -8,4 +8,4 @@
  * @arg: variable function value
  * @str: pointer to character to print
  *
- * Return: 
+ * Return: 0 if success
