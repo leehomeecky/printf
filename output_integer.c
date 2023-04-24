@@ -9,7 +9,7 @@
 int output_integer(const char *s, va_list arg)
 {
 	int len, num, i, print_nums;
-	unsigned int  result[10];
+	int  result[10];
 	const char *t = s;
 
 	print_nums = 0;
@@ -26,7 +26,7 @@ int output_integer(const char *s, va_list arg)
 	if (num < 0)
 	{
 		print_nums += my_putchar('-');
-		num = -num;
+		num *= -1;
 	}
 	do {
 		result[len++] = num % 10 + '0';
