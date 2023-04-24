@@ -8,12 +8,12 @@
  */
 int output_integer(const char *s, va_list arg)
 {
-	int len, i, num, print_nums;
+	int len, i, print_nums;
 	char result[10];
 	const char *t = s;
 
 	print_nums = 0;
-	num = va_arg(arg, int);
+	unsigned int num = va_arg(arg, int);
 
 	len = 0;
 
