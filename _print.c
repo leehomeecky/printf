@@ -119,8 +119,7 @@ int _printf(const char *format, ...)
 			p_length += percent_handler(&check, args, 0);
 		else
 		{
-		my_putchar(*check);
-		p_length++;
+		p_length += my_putchar(*check);
 		}
 		check++;
 	}
