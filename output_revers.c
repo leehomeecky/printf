@@ -12,7 +12,7 @@
 
 int output_revers(const char *str, va_list arg)
 {
-	int j = 0;
+	int i, j = 0;
 	char *s = va_arg(arg, char *);
 
 	while (*str != 'r')
@@ -21,8 +21,8 @@ int output_revers(const char *str, va_list arg)
 	while (s[j])
 		j++;
 	
-	for (--j; j >= 0; j--)
-		my_putchar(s[j]);
+	for (i = (j - 1); i >= 0; i--)
+		my_putchar(s[i]);
 	return (j);
 
 }
