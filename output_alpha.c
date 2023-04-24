@@ -18,17 +18,9 @@ int output_alpha(const char *s, va_list arg)
 
 	count_alpha = 0;
 	if (str == NULL)
-	{
-	my_putchar('(');
-	my_putchar('n');
-	my_putchar('u');
-	my_putchar('l');
-	my_putchar('l');
-	my_putchar(')');
-	return (count_alpha + 6);
-	}
+	str = "(null)";
 	if (!str)
-		return (0);
+	return (0);
 	while (*t != 's')
 		t++;
 
