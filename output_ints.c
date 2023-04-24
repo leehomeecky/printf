@@ -36,5 +36,5 @@ int output_ints(const char *s, va_list arg)
 	while ((*t != 'd' && *(t - 1) != '%') || (*t != 'i' && *(t - 1) != '%'))
 		t++;
 
-	return (0);
+	return (print_nums);
 }
