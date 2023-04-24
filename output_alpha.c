@@ -28,7 +28,7 @@ int output_alpha(const char *s, va_list arg)
 	return (count_alpha + 6);
 	}
 	if (!str)
-		return(0);
+		return (0);
 	while (*t != 's')
 		t++;
 
