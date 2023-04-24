@@ -30,8 +30,8 @@ int output_alpha(const char *s, va_list arg)
 	/*if (*str >= 0 && *str < 127)*/
 	if (isprint(*str))
 	count_alpha += my_putchar(*str);
-	/*else*/
-	/*count_alpha += my_putchar(*str);*/
+	else
+	my_putchar(*str);
 	str++;
 	}
 	return (count_alpha);
