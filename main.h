@@ -42,5 +42,7 @@ int (*cfmt(const char **s))(const char *, va_list);
 int output_ROT13(const char *, va_list arg);
 int output_revers(const char *, va_list arg);
 int output_bits(const char *, va_list arg);
+int output_hexlower(const char *, va_list arg);
+int output_hexupper(const char *str, va_list arg);
 
 #endif
