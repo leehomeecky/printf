@@ -37,8 +37,8 @@ int (*cfmt(const char **s))(const char *, va_list)
 				{"i", output_ints},
 			};
 
-	/*while (is_flag(**s))*/
-	/*	(*s)++;*/
+	while (is_flag(**s))
+		(*s)++;
 	for (i = 0; i < len; i++)
 		if (**s == *((prt_fmt + i)->spec))
 		return ((prt_fmt + i)->selectprint);
