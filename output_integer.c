@@ -9,36 +9,38 @@
  */
 int output_integer(const char *s, va_list arg)
 {
-	int len, num, i, print_nums;
-	char result[1024];
-	const char *t = s;
+	int sum, num, j, print_nums;
+	int  result[1024];
+	(void)s;
+	int m = 1000000000;
 
 	print_nums = 0;
+	j = 1;
 	num = va_arg(arg, int);
 
-	if (num == 0)
-	{
-		my_putchar('0');
-		return (1);
-	}
-
-	len = 0;
 
 	if (num < 0)
 	{
 		print_nums += my_putchar('-');
 		num *= -1;
 	}
-	do {
-		result[len++] = (num % 10) + '0';
-		num /= 10;
-	} while (num != 0);
-	for (i = len - 1; i >= 0; i--)
+	result[0] = num / m;
+
+	for (; j < 10; j++)
 	{
-		print_nums += my_putchar(result[i]);
+		m /= 10;
+		result[j] = (num / m) % 10;
 	}
-	while (*t != 'i')
-		t++;
+
+	for (j = 0; j < 10; j++)
+	{
+		sum += result[j];
+		if (sum != 0 || j == 9)
+		{
+			my_putchar('0' + result[j]);
+			print_nums++;
+		}
+	}
 
 	return (print_nums);
 }
