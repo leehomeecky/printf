@@ -10,7 +10,7 @@
 int output_integer(const char *s, va_list arg)
 {
 	int len, num, i, print_nums;
-	char result[100];
+	char result[1024];
 	const char *t = s;
 
 	print_nums = 0;
