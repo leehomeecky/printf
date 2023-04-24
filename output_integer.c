@@ -9,7 +9,7 @@
 int output_integer(const char *s, va_list arg)
 {
 	int len, num, i, print_nums;
-	int  result[10];
+	char result[50];
 	const char *t = s;
 
 	print_nums = 0;
@@ -29,17 +29,15 @@ int output_integer(const char *s, va_list arg)
 		num *= -1;
 	}
 	do {
-		result[len++] = num % 10 + '0';
+		result[len++] = (num % 10) + '0';
 		num /= 10;
 	} while (num != 0);
 	for (i = len - 1; i >= 0; i--)
 	{
 		print_nums += my_putchar(result[i]);
 	}
-	while ((*t != 'i' && *(t - 1) != '%'))
-	{
+	while (*t != 'i')
 		t++;
-	}
 
 	return (print_nums);
 }
