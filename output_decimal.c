@@ -1,26 +1,35 @@
 #include "main.h"
 #include <limits.h>
+
 /**
  * output_decimal - handle d
- * Description: integer convertion
+ * Description: integer conversion
  * @arg: arguments
  * @s: ###########
  * Return: count of digits
  */
 int output_decimal(const char *s, va_list arg)
 {
-	int len, i, num, print_nums;
+	int len, i, print_nums;
+	long num;
 	char result[1024];
 	const char *t = s;
 
 	print_nums = 0;
-	num = va_arg(arg, int);
+	num = va_arg(arg, long);
 
 	if (num == 0)
 	{
 		my_putchar('0');
 		return (1);
 	}
+
+	if (num < LONG_MIN || num > LONG_MAX)
+	{
+		// handle error here
+		return -1;
+	}
+
 	len = 0;
 	if (num < 0)
 	{
@@ -40,3 +49,4 @@ int output_decimal(const char *s, va_list arg)
 
 	return (print_nums);
 }
+
