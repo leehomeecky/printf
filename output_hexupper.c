@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * output_hexupper.c - a function that output exadecimal, in uppercase
+ * output_hexupper - a function that output exadecimal, in uppercase
  *
  * @arg: variable list argument
  * @str: pointer to delemeter
