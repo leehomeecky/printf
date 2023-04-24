@@ -17,7 +17,7 @@ int output_char(const char *s, va_list arg)
 
 	while (*t != 'c')
 		t++;
-	if (value >= 32 && value < 127)
+	if (value >= 32 && value <= 127)
 	my_putchar(value);
 	return (1);
 }
