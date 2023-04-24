@@ -18,7 +18,7 @@ int output_alpha(const char *s, va_list arg)
 
 	count_alpha = 0;
 	if (!str)
-		return (-1);
+		return (0);
 
 	if (str == NULL)
 	{
