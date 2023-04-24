@@ -25,7 +25,7 @@ int output_alpha(const char *s, va_list arg)
 	my_putchar('l');
 	my_putchar('l');
 	my_putchar(')');
-	return (6);
+	return (count_alpha + 6);
 	}
 	while (*t != 's')
 		t++;
