@@ -10,7 +10,7 @@
 int output_decimal(const char *s, va_list arg)
 {
 	int len, i, num, print_nums;
-	char result[10];
+	char result[1024];
 	const char *t = s;
 
 	print_nums = 0;
@@ -25,7 +25,7 @@ int output_decimal(const char *s, va_list arg)
 	if (num < 0)
 	{
 		print_nums += my_putchar('-');
-		num = -num;
+		num *= -1;
 	}
 	do {
 		result[len++] = num % 10 + '0';
@@ -35,10 +35,8 @@ int output_decimal(const char *s, va_list arg)
 	{
 		print_nums += my_putchar(result[i]);
 	}
-	while ((*t != 'd' && *(t - 1) != '%'))
-	{
+	while (*t != 'd')
 		t++;
-	}
 
 	return (print_nums);
 }
