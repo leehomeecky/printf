@@ -17,8 +17,6 @@ int output_ints(const char *s, va_list arg)
 	num = va_arg(arg, int);
 
 	len = 0;
-	if (num  > INT_MAX)
-		return (0);
 
 	if (num < 0)
 	{
@@ -34,7 +32,9 @@ int output_ints(const char *s, va_list arg)
 		print_nums += my_putchar(result[i]);
 	}
 	while ((*t != 'd' && *(t - 1) != '%') || (*t != 'i' && *(t - 1) != '%'))
+	{
 		t++;
+	}
 
 	return (print_nums);
 }
