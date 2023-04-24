@@ -126,5 +126,6 @@ int _printf(const char *format, ...)
 		check++;
 	}
 	va_end(args);
+	my_putchar('\n');
 	return (p_length);
 }
