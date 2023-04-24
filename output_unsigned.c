@@ -15,8 +15,8 @@ int output_unsignedint(const char *str, va_list arg)
 	int i, count, uint_len;
 	char uint_str[20];
 
-	while (*s != 'u')
-		s++;
+	while (*str != 'u')
+		str++;
 
 	uint = va_arg(arg, unsigned int);
 	i = count = uint_len = 0;
