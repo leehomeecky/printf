@@ -31,7 +31,6 @@ typedef struct flag_function
 
 
 int my_putchar(const char c);
-int writeout(char ch);
 int output_alpha(const char *, va_list arg);
 int output_char(const char *, va_list arg);
 int _printf(const char *format, ...);
