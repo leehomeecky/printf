@@ -18,10 +18,20 @@ int output_alpha(const char *s, va_list arg)
 	int count_alpha;
 
 	count_alpha = 0;
-	if (!str)
+	if (*str == NULL)
 	{
-	return (0);
+	my_putchar('(');
+	my_putchar('n');
+	my_putchar('u');
+	my_putchar('l');
+	my_putchar('l');
+	my_putchar(')');
+	return (6);
 	}
+
+	if (!str)
+	return (-1);
+
 	while (*t != 's')
 		t++;
 
