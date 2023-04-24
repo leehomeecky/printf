@@ -17,10 +17,10 @@ int output_alpha(const char *s, va_list arg)
 	int count_alpha;
 
 	count_alpha = 0;
-	if (!str)
-		return (0);
+	if (!s)
+		return (-1);
 
-	if (str == NULL)
+	if (!str)
 	{
 	my_putchar('(');
 	my_putchar('n');
