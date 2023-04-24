@@ -13,6 +13,8 @@ int output_ptraddress(const char *s, va_list arg)
     ptr = va_arg(arg, void *);
     address = (unsigned long int)ptr;
     /* Convert the address to a hexadecimal string */
+    if (ptr == NULL)
+	    return (-1);
     do 
     {
 	    digit = address % 16;
