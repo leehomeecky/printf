@@ -35,6 +35,7 @@ int (*cfmt(const char **s))(const char *, va_list)
 				{"c", output_char},
 				{"d", output_ints},
 				{"i", output_ints},
+				{"R", output_ROT13}
 			};
 
 	while (is_flag(**s))
