@@ -32,10 +32,10 @@ int output_alpha(const char *s, va_list arg)
 
 	while (*str != '\0')
 	{
-	if (*str >= 0 && *str < 127)
+	/*if (*str >= 0 && *str < 127)*/
 	count_alpha += my_putchar(*str);
-	else
-	count_alpha += my_putchar(*str);
+	/*else*/
+	/*count_alpha += my_putchar(*str);*/
 	str++;
 	}
 	return (count_alpha);
