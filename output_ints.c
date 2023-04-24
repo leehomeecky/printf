@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 /**
  * output_ints - d & i
  * Description: integer convertion
@@ -9,12 +10,16 @@
 int output_ints(const char *s, va_list arg)
 {
 	int len, i, num, print_nums;
-	char buffer[16];
+	char buffer[32];
 	const char *t = s;
 
 	print_nums = 0;
 	num = va_arg(arg, int);
+
 	len = 0;
+	if (num  > INT_MAX)
+		return (0);
+
 	if (num < 0)
 	{
 		my_putchar('-');
