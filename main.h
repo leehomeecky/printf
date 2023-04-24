@@ -39,6 +39,7 @@ int _printf(const char *format, ...);
 int percent_handler(const char **s, va_list args, int no_perc);
 int is_flag(const char s);
 int (*cfmt(const char **s))(const char *, va_list);
+int output_ptraddress(const char *s, va_list arg);
 int output_ROT13(const char *, va_list arg);
 int output_revers(const char *, va_list arg);
 int output_bits(const char *, va_list arg);

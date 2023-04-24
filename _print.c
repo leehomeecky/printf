@@ -36,6 +36,7 @@ int (*cfmt(const char **s))(const char *, va_list)
 				{"d", output_decimal},
 				{"i", output_integer},
 				{"R", output_ROT13},
+				{"p", output_ptraddress},
 				{"r", output_revers},
 				{"b", output_bits},
 				{"x", output_hexlower}
