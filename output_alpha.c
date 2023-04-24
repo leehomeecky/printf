@@ -28,10 +28,6 @@ int output_alpha(const char *s, va_list arg)
 	my_putchar(')');
 	return (6);
 	}
-
-	if (!str)
-	return (-1);
-
 	while (*t != 's')
 		t++;
 
