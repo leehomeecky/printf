@@ -24,6 +24,8 @@ char *n = va_arg(arg, char *);
 	{
 	return (0);
 	}
+while (*str != 'R')
+	str++;
 
 for (i = 0; n[i] != '\0'; i++)
 {
