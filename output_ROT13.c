@@ -36,6 +36,8 @@ int output_ROT13(const char *str, va_list arg)
 	break;
 	}
 	}
+	if (s1[j] == '\0')
+	count_rot += my_putchar(n[i]);
 	}
 	return (count_rot);
 }
