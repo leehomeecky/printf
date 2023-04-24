@@ -29,10 +29,12 @@ int is_flag(const char s)
  */
 int (*cfmt(const char **s))(const char *, va_list)
 {
-	int i, len = 2;
+	int i, len = 4;
 	PrtFmt prt_fmt[] = {
 				{"s", output_alpha},
-				{"c", output_char}
+				{"c", output_char},
+				{"d", output_ints},
+				{"i", output_ints},
 			};
 
 	while (is_flag(**s))
