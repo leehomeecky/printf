@@ -15,6 +15,11 @@ int output_integer(const char *s, va_list arg)
 	print_nums = 0;
 	num = va_arg(arg, int);
 
+	if (num == 0)
+	{
+		my_putchar('0');
+		return (1);
+	}
 
 	len = 0;
 
