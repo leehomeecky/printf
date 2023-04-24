@@ -13,10 +13,11 @@ int output_char(const char *s, va_list arg)
 {
 	/*writeout(va_arg(arg, int));*/
 	const char *t = s;
+	int value = va_arg(arg, int);
 
 	while (*t != 'c')
 		t++;
-	if (*str >= 32 && *str < 127)
-	my_putchar(va_arg(arg, int));
+	if (value >= 32 && value < 127)
+	my_putchar(value);
 	return (1);
 }
