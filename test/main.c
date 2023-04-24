@@ -26,6 +26,10 @@ len = _printf("Percent:[%%]\n");
 len2 = printf("Percent:[%%]\n");
 len = _printf("%p null, \n", NULL);
 printf("%p null, \n", NULL);
+printf("%p\n", "0xff");
+_printf("%p\n", "0xff");
+_printf("%d \n", len);
+len = _printf("%s \n %s", NULL, NULL);
 _printf("%d \n", len);
 return (0);
 }

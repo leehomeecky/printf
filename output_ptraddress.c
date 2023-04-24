@@ -1,52 +1,52 @@
 #include "main.h"
+#include <stdlib.h>
+
 /**
- * output_ptraddress - ===
- * @s: ===
- * @arg: ===
- * Return: ==
+ * output_ptraddress - ====
+ * @p: ===
+ * @s: ====
+ * Return: ===
  */
-
-int output_ptraddress(const char *s, va_list arg)
+int output_ptraddress(const char *s, va_list p)
 {
-	void *ptr;
-	unsigned long int  address;
-	char hex_str[16];
-	int count, i, digit;
+	int counter = 0;
+	unsigned int a[16];
+	unsigned int i = 0, sum = 0;
+	unsigned long n, m = 1152921504606846976;
+	char *str = "(nil)";
 
-	count = 0;
-	ptr = va_arg(arg, void *);
-	if (ptr == NULL)
+	(void)s;
+	n = va_arg(p, unsigned long);
+	if (n == 0)
 	{
-		my_putchar('(');
-		my_putchar('n');
-		my_putchar('i');
-		my_putchar('l');
-		my_putchar(')');
-		return (5);
+		for (; str[i]; i++)
+		{
+			my_putchar(str[i]);
+			counter++;
+		}
+		return (counter);
 	}
-	address = (unsigned long int)ptr;
-	do {
-		digit = address % 16;
-		if (digit < 10)
-		{
-			hex_str[count++] = digit + '0';
-		}
-		else
-		{
-			hex_str[count++] = 'a' + digit - 10;
-		}
-		address /= 16;
-	} while (address != 0);
 	my_putchar('0');
 	my_putchar('x');
-	for (i = count - 1; i >= 0; i--)
+	counter = 2;
+
+	a[0] = n / m;
+	for (i = 1; i < 16; i++)
 	{
-		my_putchar(hex_str[i]);
-		count++;
+		m /= 16;
+		a[i] = (n / m) % 16;
 	}
-	while (*s != 'p')
-		s++;
-
-	return (count + 2);
+	for (i = 0; i < 16; i++)
+	{
+		sum += a[i];
+		if (sum || i == 15)
+		{
+			if (a[i] < 10)
+				my_putchar('0' + a[i]);
+			else
+				my_putchar('0' + ('a' - ':') + a[i]);
+			counter++;
+		}
+	}
+	return (counter);
 }
-
