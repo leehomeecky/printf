@@ -14,11 +14,10 @@ int output_alpha(const char *s, va_list arg)
 {
 	char *str = va_arg(arg, char *);
 	const char *t = s;
-	/*(void)f; */
 	int count_alpha;
 
 	count_alpha = 0;
-	if (!str )
+	if (!str)
 	{
 	my_putchar('(');
 	my_putchar('n');
@@ -33,24 +32,10 @@ int output_alpha(const char *s, va_list arg)
 
 	while (*str != '\0')
 	{
-
 	if (*str >= 32 && *str < 127)
-	{
-	/*printable character*/
 	count_alpha += my_putchar(*str);
-
-	}
 	else
-	{
-	/*non-printable character*/
 	my_putchar(*str);
-	/*
-	*my_putchar('\\');
-	*my_putchar('x');
-*my_putchar((*str / 16) < 10 ? ('0' + (*str / 16)) : ('A' + (*str / 16 - 10)));
-*my_putchar((*str % 16) < 10 ? ('0' + (*str % 16)) : ('A' + (*str % 16 - 10)));
-	*/
-	}
 	str++;
 	}
 	return (count_alpha);
