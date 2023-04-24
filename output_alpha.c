@@ -18,7 +18,7 @@ int output_alpha(const char *s, va_list arg)
 	int count_alpha;
 
 	count_alpha = 0;
-	if (*str == NULL)
+	if (*str == '\0')
 	{
 	my_putchar('(');
 	my_putchar('n');
