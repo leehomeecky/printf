@@ -5,16 +5,24 @@ int output_ptraddress(const char *s, va_list arg)
 {
     void *ptr;
     unsigned long int  address;
-    char hex_str[20];
+    char hex_str[16];
     int count;
     int i, digit;
 
     count = 0;
     ptr = va_arg(arg, void *);
+    if (ptr == NULL)
+    {
+	    my_putchar('(');
+	    my_putchar('n');
+	    my_putchar('i');
+	    my_putchar('l');
+	    my_putchar(')');
+	    return (5);
+    }
+    
     address = (unsigned long int)ptr;
     /* Convert the address to a hexadecimal string */
-    if (ptr == NULL)
-	    return (-1);
     do 
     {
 	    digit = address % 16;
