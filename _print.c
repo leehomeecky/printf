@@ -33,8 +33,8 @@ int (*cfmt(const char **s))(const char *, va_list)
 	PrtFmt prt_fmt[] = {
 				{"s", output_alpha},
 				{"c", output_char},
-				{"d", output_ints},
-				{"i", output_ints},
+				{"d", output_decimal},
+				{"i", output_integer},
 				{"R", output_ROT13},
 				{"r", output_revers}
 			};

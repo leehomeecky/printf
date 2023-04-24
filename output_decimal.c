@@ -1,13 +1,13 @@
 #include "main.h"
 #include <limits.h>
 /**
- * output_ints - d & i
+ * output_decimal - handle d
  * Description: integer convertion
  * @arg: arguments
  * @s: ###########
  * Return: count of digits
  */
-int output_ints(const char *s, va_list arg)
+int output_decimal(const char *s, va_list arg)
 {
 	int len, i, num, print_nums;
 	char result[10];
@@ -31,7 +31,7 @@ int output_ints(const char *s, va_list arg)
 	{
 		print_nums += my_putchar(result[i]);
 	}
-	while ((*t != 'd' && *(t - 1) != '%') || (*t != 'i' && *(t - 1) != '%'))
+	while ((*t != 'd' && *(t - 1) != '%'))
 	{
 		t++;
 	}

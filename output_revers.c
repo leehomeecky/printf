@@ -20,7 +20,7 @@ int output_revers(const char *str, va_list arg)
 
 	while (s[j])
 		j++;
-	
+
 	for (i = (j - 1); i >= 0; i--)
 		my_putchar(s[i]);
 	return (j);
