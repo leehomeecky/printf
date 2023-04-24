@@ -13,7 +13,7 @@
 
 int output_alpha(const char *s, va_list arg)
 {
-	char *str = va_arg(arg, char *);
+	unsigned char *str = va_arg(arg, unsigned char *);
 	const char *t = s;
 	int count_alpha;
 
