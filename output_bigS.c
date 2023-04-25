@@ -22,10 +22,14 @@ int output_bigS(const char *s, va_list S)
 	{
 		if (Nstr[m] < 32 || Nstr[m] >= 127)
 		{
-			my_putchar('\\');
-			my_putchar('x');
-			counter += 2;
-			counter += output_bigSX(Nstr);
+			/*my_putchar('\\');*/
+			/*my_putchar('x');*/
+			/*counter += 2;*/
+			counter+= my_putchar('\\');        counter += my_putchar('X');         counter += my_putchar((*Nstr / 16) < 10 ? ('0' + (*Nstr / 16)) : ('A'
++ (*Nstr / 16 - 10)));
+         counter+= my_putchar((*Nstr
+ % 16) < 10 ? ('0' + (*Nstr % 16)) : ('A' + (*Nstr % 16 - 10)));
+			/*counter += output_bigSX(Nstr);*/
 		}
 		else
 		{
