@@ -15,8 +15,6 @@ int output_hexlower(const char *str, va_list arg)
 	int i, count, hex_len, digit, h;
 	char hex_str[20];
 
-	while (*str != 'x')
-		str++;
 	h = hight(str, 'x');
 	(h == 2) ? (uint = va_arg(arg, unsigned long int)) :
 			(uint = va_arg(arg, unsigned int));

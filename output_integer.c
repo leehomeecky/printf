@@ -18,8 +18,6 @@ int output_integer(const char *s, va_list arg)
 	(h == 2) ? (n = va_arg(arg, long int)) : (n = va_arg(arg, int));
 	if (h == 1)
 		n = (short) n;
-	while (*s != 'i')
-		s++;
 	if (n == 0)
 		counter += my_putchar('0');
 	if (n < 0)
