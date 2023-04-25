@@ -15,8 +15,6 @@ int output_hexupper(const char *str, va_list arg)
 	int i, count, hex_len, digit, h;
 	char hex_str[20];
 
-	while (*str != 'X')
-		str++;
 	h = hight(str, 'X');
 	(h == 2) ? (uint = va_arg(arg, unsigned long int)) :
 			(uint = va_arg(arg, unsigned int));

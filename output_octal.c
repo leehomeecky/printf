@@ -21,8 +21,6 @@ int output_octal(const char *str, va_list arg)
 	if (h == 1)
 		uint = (unsigned short) uint;
 	i = count = octal_len = 0;
-	while (*str != 'o')
-		str++;
 	do {
 		octal_str[octal_len++] = '0' + (uint % 8);
 		uint /= 8;
