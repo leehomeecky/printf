@@ -9,10 +9,10 @@ int output_bigSX(va_list X)
     unsigned int a[8];
     unsigned int m = 268435456, n, sum = 0;
     char diff;
-    int counter, i;
+    int counter, i = 1;
     
     n = va_arg(X, unsigned int);
-    for (i = 0; i < 8; i++)
+    for (; i < 8; i++)
     {
         a[i] = (n / m) % 16;
         m /= 16;
