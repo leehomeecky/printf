@@ -11,11 +11,12 @@ int output_integer(const char *s, va_list arg)
 {
 	int sum, num, j, print_nums;
 	int  result[1024];
-	(void)s;
-	int m = 1000000000;
-
+	int m; 
+	
+	m = 1000000000;
 	print_nums = 0;
 	j = 1;
+	(void)s;
 	num = va_arg(arg, int);
 
 
