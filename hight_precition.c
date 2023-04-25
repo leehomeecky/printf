@@ -34,12 +34,16 @@ int hight(const char *str, char s)
 
 int precision(const char *str, char s)
 {
-	int i, dot = 0, len = 0;
+	int i, dot = 0, len = -1;
 
 	for (i = 0; str[i] != s; i++)
 	{
 		if (str[i] == '.')
+		{
 			dot++;
+			if (len < 0)
+			len = 0;
+		}
 		else if (dot > 0)
 		{
 			if (str[i] >= '0' && str[i] <= '9')
