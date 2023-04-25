@@ -15,8 +15,6 @@ int output_unsignedint(const char *str, va_list arg)
 	int i, count, uint_len, h;
 	char uint_str[20];
 
-	while (*str != 'u')
-		str++;
 	h = hight(str, 'u');
 	(h == 2) ? (uint = va_arg(arg, unsigned long int)) :
 			(uint = va_arg(arg, unsigned int));
