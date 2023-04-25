@@ -22,6 +22,29 @@ int is_flag(const char s)
 
 
 /**
+ * dot_null - to check for dot nolifiers
+ *
+ * @s: pointer to string
+ *
+ * Return: 1 if true else 0
+ */
+
+int dot_null(const char *s)
+{
+	int i, d = 0;
+
+	for (i = 0; is_flag(s[i]); i++)
+	{
+		if (s[i] == '.')
+			d++;
+		if (d > 1)
+		if (s[i] >= '0' && s[i] <= '9')
+		return (1);
+	}
+	return (0);
+}
+
+/**
  * cfmt - check for specifier
  * @s: format
  *
@@ -74,7 +97,7 @@ int percent_handler(const char **s, va_list args, int no_perc)
 	for (; *check1 == '%'; check1++)
 		no_perc++;
 	check2 = check1;
-	output = cfmt(&check2);
+	(dot_null(check1)) ? (output = NULL) : (output = cfmt(&check2));
 	if (output)
 	{
 		for (i = 0; i < (no_perc / 2); i++)
