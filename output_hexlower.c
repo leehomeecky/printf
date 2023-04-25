@@ -11,7 +11,7 @@
 
 int output_hexlower(const char *str, va_list arg)
 {
-	unsigned int uint;
+	unsigned long int uint;
 	int i, count, hex_len, digit, h;
 	char hex_str[20];
 
