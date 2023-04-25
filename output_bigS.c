@@ -25,7 +25,7 @@ int output_bigS(const char *s, va_list S)
 			my_putchar('\\');
 			my_putchar('x');
 			counter += 2;
-			counter += output_hexupper(s, S);
+			counter += output_bigSX(Nstr[m]);
 		}
 		else
 		{
