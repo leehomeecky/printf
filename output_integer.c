@@ -11,7 +11,7 @@ int output_integer(const char *s, va_list arg)
 {
 	int a[18];
 	long int j = 1, n, m = 100000000000000000;
-	
+
 	int counter = 0, sum = 0;
 
 	n = va_arg(arg, int);
