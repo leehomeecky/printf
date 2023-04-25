@@ -7,12 +7,13 @@
 int output_bigSX(char X)
 {
     unsigned int a[8];
-    unsigned int j = 1, m = 268435456, n, sum = 0;
+    unsigned int m = 268435456, n, sum = 0;
     char diff;
     int counter, i;
 
 /*    n = va_arg(X, unsigned int);*/
 
+    n = (unsigned int)X;
     for (i = 0; i < 8; i++)
     {
         a[i] = (n / m) % 16;
