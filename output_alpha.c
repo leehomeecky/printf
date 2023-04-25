@@ -13,15 +13,18 @@
 int output_alpha(const char *s, va_list arg)
 {
 	char *str = va_arg(arg, char *);
-	const char *t = s;
 	int count_alpha;
 
+	(void)s;
 	count_alpha = 0;
+	if (*str == '\0')
+		return (-1);
+	
 	if (str == NULL)
 	str = "(null)";
 
-	while (*t != 's')
-		t++;
+	/*while (*t != 's')*/
+		/*t++;*/
 
 	while (*str != '\0')
 	{
