@@ -12,7 +12,7 @@ int flag_plus(const char **str)
 {
 	int i = 0;
 
-	for (; **s == '+'; (*s)++)
+	for (; **str == '+'; (*str)++)
 		i = 1;
 	return (i);
 }
@@ -30,7 +30,7 @@ int flag_hash(const char **str)
 {
 	int i = 0;
 
-	for (; **s == '#'; (*s)++)
+	for (; **str == '#'; (*str)++)
 		i = 1;
 	return (i);
 }
@@ -47,7 +47,7 @@ int flag_space(const char **str)
 {
 	int i = 0;
 
-	for (; **s == ' '; (*s)++)
+	for (; **str == ' '; (*str)++)
 		i = 1;
 	return (i);
 }
