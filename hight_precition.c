@@ -18,7 +18,7 @@ int hight(const char *str, char s)
 		if (str[i] == 'h')
 			h = 1;
 		if (str[i] == 'l')
-			return (2);
+			h = 2;
 	}
 	return (h);
 }
