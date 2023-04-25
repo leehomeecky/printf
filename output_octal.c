@@ -15,7 +15,7 @@ int output_octal(const char *str, va_list arg)
 	int i, count, octal_len;
 	char octal_str[20];
 
-	
+
 	uint = va_arg(arg, unsigned int);
 	i = count = octal_len = 0;
 	while (*str != 'o')
@@ -26,6 +26,6 @@ int output_octal(const char *str, va_list arg)
 	} while (uint != 0);
 	for (i = octal_len - 1; i >= 0; i--)
 		count += my_putchar(octal_str[i]);
-	
+
 	return (count);
 }
