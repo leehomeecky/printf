@@ -25,7 +25,7 @@ int output_bigS(const char *s, va_list S)
 			/*my_putchar('\\');*/
 			/*my_putchar('x');*/
 			/*counter += 2;*/
-			counter+= my_putchar('\\');        counter += my_putchar('X');         counter += my_putchar((*Nstr / 16) < 10 ? ('0' + (*Nstr / 16)) : ('A'
+			counter+= my_putchar('\\');        counter += my_putchar('x');         counter += my_putchar((*Nstr / 16) < 10 ? ('0' + (*Nstr / 16)) : ('A'
 + (*Nstr / 16 - 10)));
          counter+= my_putchar((*Nstr
  % 16) < 10 ? ('0' + (*Nstr % 16)) : ('A' + (*Nstr % 16 - 10)));
