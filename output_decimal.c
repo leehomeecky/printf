@@ -8,39 +8,35 @@
  */
 int output_decimal(const char *s, va_list arg)
 {
-	int sum, num, j, print_nums;
-	int  result[10];
-	int m; 
-	
-	m = 1000000000;
-	print_nums = 0;
-	j = 1;
-	(void)s;
-	num = va_arg(arg, int);
+	int a[10];
+	int j = 1, m = 1000000000, n, sum = 0, counter = 0;
 
+	while (*s != '\0')
+		s++;
 
-	if (num < 0)
+	n = va_arg(arg, int);
+	if (n < 0)
 	{
-		print_nums += my_putchar('-');
-		num *= -1;
+		n *= -1;
+		my_putchar('-');
+		counter++;
 	}
-	result[0] = num / m;
+	a[0] = n / m;
 
 	for (; j < 10; j++)
 	{
 		m /= 10;
-		result[j] = (num / m) % 10;
+		a[j] = (n / m) % 10;
 	}
 
 	for (j = 0; j < 10; j++)
 	{
-		sum += result[j];
+		sum += a[j];
 		if (sum != 0 || j == 9)
 		{
-			my_putchar('0' + result[j]);
-			print_nums++;
+			my_putchar('0' + a[j]);
+			counter++;
 		}
 	}
-
-	return (print_nums);
+	return (counter);
 }
