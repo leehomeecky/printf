@@ -30,7 +30,8 @@ typedef struct flag_function
 } FlagFunc;
 
 
-int my_putchar(const char c);
+int my_puts(char c);
+int my_putchar(char c);
 int output_alpha(const char *, va_list arg);
 int output_char(const char *, va_list arg);
 int output_decimal(const char *, va_list arg);
