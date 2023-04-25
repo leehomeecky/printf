@@ -45,6 +45,7 @@ int output_revers(const char *, va_list arg);
 int output_bits(const char *, va_list arg);
 int output_hexlower(const char *, va_list arg);
 int output_hexupper(const char *, va_list arg);
+int output_bigS(const char *, va_list arg);
 int output_unsignedint(const char *, va_list arg);
 int output_octal(const char *, va_list arg);
 

@@ -29,7 +29,7 @@ int is_flag(const char s)
  */
 int (*cfmt(const char **s))(const char *, va_list)
 {
-	int i, len = 12;
+	int i, len = 13;
 	PrtFmt prt_fmt[] = {
 				{"s", output_alpha},
 				{"c", output_char},
@@ -39,6 +39,7 @@ int (*cfmt(const char **s))(const char *, va_list)
 				{"p", output_ptraddress},
 				{"r", output_revers},
 				{"b", output_bits},
+				{"S", output_bigS},
 				{"x", output_hexlower},
 				{"X", output_hexupper},
 				{"u", output_unsignedint},
