@@ -4,16 +4,14 @@
  * @X: argument
  * Return: characters count
  */
-int output_bigSX(char X)
+int output_bigSX(va_list X)
 {
     unsigned int a[8];
     unsigned int m = 268435456, n, sum = 0;
     char diff;
     int counter, i;
-
-/*    n = va_arg(X, unsigned int);*/
-
-    n = (unsigned int)X;
+    
+    n = va_arg(X, unsigned int);
     for (i = 0; i < 8; i++)
     {
         a[i] = (n / m) % 16;
