@@ -10,7 +10,7 @@
 int output_integer(const char *s, va_list arg)
 {
 	int sum, num, j, print_nums;
-	int  result[1024];
+	int  result[10];
 	int m; 
 	
 	m = 1000000000;
