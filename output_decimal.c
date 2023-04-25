@@ -32,7 +32,7 @@ int output_decimal(const char *s, va_list arg)
 	for (j = 0; j < 17; j++)
 	{
 		sum += a[j];
-		if (sum != 0 || j == 16)
+		if (sum != 0 || j == 17)
 		{
 			my_putchar('0' + a[j]);
 			counter++;
