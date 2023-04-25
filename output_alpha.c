@@ -17,16 +17,13 @@ int output_alpha(const char *s, va_list arg)
 
 	(void)s;
 	count_alpha = 0;
-	if (*str == '\0')
-		my_puts('\0');
-		return (1);
 	if (str == NULL)
 	str = "(null)";
 
 	/*while (*t != 's')*/
 		/*t++;*/
 
-	while (*str != '\0')
+	while (*str)
 	{
 	/*if (*str >= 0 && *str < 127)*/
 	/*if (isprint(*str))*/
