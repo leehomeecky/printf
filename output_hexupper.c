@@ -11,13 +11,17 @@
 
 int output_hexupper(const char *str, va_list arg)
 {
-	unsigned int uint;
-	int i, count, hex_len, digit;
+	unsigned long int uint;
+	int i, count, hex_len, digit, h;
 	char hex_str[20];
 
 	while (*str != 'X')
 		str++;
-	uint = va_arg(arg, unsigned int);
+	h = hight(str, 'X');
+	(h == 2) ? (uint = va_arg(arg, unsigned long int)) :
+			(uint = va_arg(arg, unsigned int));
+	if (h == 1)
+		uint = (unsigned short) uint;
 	i = count = hex_len = 0;
 	do {
 		digit = uint % 16;

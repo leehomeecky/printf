@@ -49,5 +49,6 @@ int output_bigS(const char *, va_list arg);
 int output_bigSX(char *X);
 int output_unsignedint(const char *, va_list arg);
 int output_octal(const char *, va_list arg);
+int hight(const char *, char);
 
 #endif
