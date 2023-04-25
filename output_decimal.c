@@ -16,6 +16,8 @@ int output_decimal(const char *s, va_list arg)
 		s++;
 
 	n = va_arg(arg, int);
+	if (n == 0)
+		counter += my_putchar('0');
 	if (n < 0)
 	{
 		n *= -1;
