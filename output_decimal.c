@@ -8,7 +8,7 @@
  */
 int output_decimal(const char *s, va_list arg)
 {
-	int a[17];
+	int a[18];
 	long int j = 1, n, m = 10000000000000000, sum = 0, counter = 0;
 
 	while (*s != 'd')
@@ -23,16 +23,16 @@ int output_decimal(const char *s, va_list arg)
 	}
 	a[0] = n / m;
 
-	for (; j < 17; j++)
+	for (; j < 18; j++)
 	{
 		m /= 10;
 		a[j] = (n / m) % 10;
 	}
 
-	for (j = 0; j < 17; j++)
+	for (j = 0; j < 18; j++)
 	{
 		sum += a[j];
-		if (sum != 0 || j == 17)
+		if (sum != 0 || j == 18)
 		{
 			my_putchar('0' + a[j]);
 			counter++;
