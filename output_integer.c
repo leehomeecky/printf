@@ -10,8 +10,9 @@
 int output_integer(const char *s, va_list arg)
 {
 	int a[16];
-	long int j = 1, m = 1000000000000000, n, sum = 0, counter = 0;
+	signed  long int j = 1, m = 1000000000000000, n;
 
+	long int counter = 0, sum = 0;
 	n = va_arg(arg, int);
 	while (*s != 'i')
 		s++;
