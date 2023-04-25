@@ -14,7 +14,7 @@ int output_integer(const char *s, va_list arg)
 
 	long int counter = 0, sum = 0;
 
-	n = va_arg(arg,long int);
+	n = va_arg(arg,int);
 	while (*s != 'i')
 		s++;
 
