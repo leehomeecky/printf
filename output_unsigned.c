@@ -11,14 +11,17 @@
 
 int output_unsignedint(const char *str, va_list arg)
 {
-	unsigned int uint;
-	int i, count, uint_len;
+	unsigned long int uint;
+	int i, count, uint_len, h;
 	char uint_str[20];
 
 	while (*str != 'u')
 		str++;
-
-	uint = va_arg(arg, unsigned int);
+	h = hight(str, 'u');
+	(h == 2) ? (uint = va_arg(arg, unsigned long int)) :
+			(uint = va_arg(arg, unsigned int));
+	if (h == 1)
+		uint = (unsigned short) uint;
 	i = count = uint_len = 0;
 
 	do {

@@ -11,12 +11,15 @@
 
 int output_octal(const char *str, va_list arg)
 {
-	unsigned int uint;
-	int i, count, octal_len;
+	unsigned long int uint;
+	int i, count, octal_len, h;
 	char octal_str[20];
 
-
-	uint = va_arg(arg, unsigned int);
+	h = hight(str, 'o');
+	(h == 2) ? (uint = va_arg(arg, unsigned long int)) :
+			(uint = va_arg(arg, unsigned int));
+	if (h == 1)
+		uint = (unsigned short) uint;
 	i = count = octal_len = 0;
 	while (*str != 'o')
 		str++;
