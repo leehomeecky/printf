@@ -9,8 +9,8 @@
  */
 int output_integer(const char *s, va_list arg)
 {
-	int a[12];
-	long int j = 1, m = 100000000000, n, sum = 0, counter = 0;
+	int a[16];
+	long int j = 1, m = 1000000000000000, n, sum = 0, counter = 0;
 
 	n = va_arg(arg, int);
 	while (*s != 'i')
@@ -24,16 +24,16 @@ int output_integer(const char *s, va_list arg)
 	}
 	a[0] = n / m;
 
-	for (; j < 12; j++)
+	for (; j < 16; j++)
 	{
 		m /= 10;
 		a[j] = (n / m) % 10;
 	}
 
-	for (j = 0; j < 12; j++)
+	for (j = 0; j < 16; j++)
 	{
 		sum += a[j];
-		if (sum != 0 || j == 12)
+		if (sum != 0 || j == 16)
 		{
 			my_putchar('0' + a[j]);
 			counter++;
