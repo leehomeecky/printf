@@ -14,7 +14,7 @@ int output_decimal(const char *s, va_list arg)
 	while (*s != 'd')
 		s++;
 
-	n = va_arg(arg, int);
+	n = va_arg(arg, long int);
 	if (n < 0)
 	{
 		n *= -1;
