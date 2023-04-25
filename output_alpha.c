@@ -17,7 +17,7 @@ int output_alpha(const char *s, va_list arg)
 
 	(void)s;
 	count_alpha = 0;
-	if (str == NULL)
+	if (!str)
 	str = "(null)";
 
 	/*while (*t != 's')*/
