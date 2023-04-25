@@ -14,10 +14,11 @@ int output_integer(const char *s, va_list arg)
 	
 	int counter = 0, sum = 0;
 
-	n = va_arg(arg,int);
+	n = va_arg(arg, int);
 	while (*s != 'i')
 		s++;
-
+	if (n == 0)
+		counter += my_putchar('0');
 	if (n < 0)
 	{
 		n *= -1;
