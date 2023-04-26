@@ -34,9 +34,9 @@ int iflag_handler(const char **str, int len, long int value)
 
 	(value >= 0) ? (plus = flag_plus(str)) : (space = flag_space(str));
 	dot = precision(*str, 'i');
-	if (dot < 0 && **s == '0')
+	if (dot < 0 && **str == '0')
 	zero = justify(str, 'i');
-	(**s == '-') ? (minus = justify(str, 'i')) :
+	(**str == '-') ? (minus = justify(str, 'i')) :
 			(width = justify(str, 'i'));
 	(value >= 0) ? (zero -= plus) : (zero--);
 	if (dot >= 0)
