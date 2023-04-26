@@ -11,7 +11,7 @@
 
 int justify(const char **str, char s)
 {
-	long int len = 0;
+	int len = 0;
 
 	for (; **str != s; (*str)++)
 	{
