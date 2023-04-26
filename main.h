@@ -51,10 +51,14 @@ int output_bigSX(char *X);
 int output_unsignedint(const char *, va_list arg);
 int output_octal(const char *, va_list arg);
 int hight(const char *, char);
-int justify(const char **str, char);
-int flag_plus(const char **str);
-int flag_hash(const char **str);
-int flag_space(const char **str);
+int justify(const char **, char);
+int flag_plus(const char **);
+int flag_hash(const char **);
+int flag_space(const char **, long int);
 int precision(const char *, char);
+int print_array_all(int *, int);
+int print_array_val(int *, int);
+int count_array(int *, int);
+int print_recus(int, char);
 
 #endif
