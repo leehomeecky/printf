@@ -11,15 +11,15 @@
 
 int count_array(int *arr, int len)
 {
-    int i, count = 0, sum = 0;
+	int i, count = 0, sum = 0;
 
-    for (i = 0; i < len; i++)
-    {
-        sum += arr[i];
-		if (sum != 0 || i == len)
+	for (i = 0; i < len; i++)
+	{
+	sum += arr[i];
+	if (sum != 0 || i == len)
 		count++;
-    }
-    return (count);
+	}
+	return (count);
 }
 
 /**
@@ -34,15 +34,15 @@ int count_array(int *arr, int len)
 
 int print_array_val(int *arr, int len)
 {
-    int i, count = 0, sum = 0;
+	int i, count = 0, sum = 0;
 
-    for (i = 0; i < len; i++)
-    {
-        sum += arr[i];
-		if (sum != 0 || i == len)
-		count += my_putchar('0' + arr[i]);
-    }
-    return (count);
+	for (i = 0; i < len; i++)
+	{
+	sum += arr[i];
+	if (sum != 0 || i == len)
+	count += my_putchar('0' + arr[i]);
+	}
+	return (count);
 }
 
 /**
@@ -57,19 +57,19 @@ int print_array_val(int *arr, int len)
 
 int print_array_all(int *arr, int len)
 {
-    int i, count = 0, sum = 0;
+	int i, count = 0, sum = 0;
 
-    for (i = 0; i < len; i++)
-    {
-        sum += arr[i];
-		if (sum || i == len)
-		count += my_putchar('0' + arr[i]);
-    }
-    return (count);
+	for (i = 0; i < len; i++)
+	{
+	sum += arr[i];
+	if (sum || i == len)
+	count += my_putchar('0' + arr[i]);
+	}
+	return (count);
 }
 
 /**
- * print_recus
+ * print_recus - prints a value repetedly
  *
  * @len: number of time to print the value
  * @value: value to print
@@ -80,10 +80,11 @@ int print_array_all(int *arr, int len)
 int print_recus(int len, char value)
 {
 	int i = 0;
+
 	if (len <= 0)
 	return (0);
 
 	for (; i < len; i++)
-		my_putchar(value);
+	my_putchar(value);
 	return (i);
 }
