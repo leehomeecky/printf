@@ -5,13 +5,16 @@
  *
  * @len: number of time to print the value
  * @value: value to print
+ *
+ * Return: number of value printed
  */
 
-void print_recus(int len, char value)
+int print_recus(int len, char value)
 {
-	int i;
-	for (i = 0; i < len; i++)
+	int i = 0;
+	for (; i < len; i++)
 		my_putchar(value);
+	return (i);
 }
 
 /**
@@ -26,15 +29,15 @@ void print_recus(int len, char value)
 
 int iflag_handler(const char **str, int len, long int value)
 {
-	int i,  plus = 0, dot, zero = 0, space, minus, width = 0;
+	int i, count = 0,  plus = 0, dot, zero = 0, space, minus, width = 0;
 
-	(value > 0) ? (plus = flag_plus(str)) : (space = flag_space(str));
+	(value >= 0) ? (plus = flag_plus(str)) : (space = flag_space(str));
 	dot = precision(*str, 'i');
 	if (dot < 0 && **s == '0')
 	zero = justify(str, 'i');
 	(**s == '-') ? (minus = justify(str, 'i')) :
 			(width = justify(str, 'i'));
-	(value > 0) ? (zero -= plus) : (zero--);
+	(value >= 0) ? (zero -= plus) : (zero--);
 	if (dot >= 0)
 	{
 	(dot > len) ? (dot -= len) : (dot = 0);
@@ -46,9 +49,20 @@ int iflag_handler(const char **str, int len, long int value)
 	width -= zero;
 	}
 	width -= len;
-	if (value > 0)
-		if
-
+	if (value >= 0)
+	{
+	count += print_recus(width, ' ');
+	count += print_recus(plus, '+');
+	}
+	else
+	{
+	count += print_recus((width -= 1), ' ');
+	count += print_recus(1, '-');
+	}
+	if (dot > 0)
+	count += print_recus(dot, '0');
+	if (zero > 0);
+	return (count);
 }
 
 
