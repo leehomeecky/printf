@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
 /**
  * print_recus
  *
@@ -28,7 +27,7 @@ int print_recus(int len, char value)
  * Return: number of printed value
  */
 
-int iflag_handler(const char **str, int len, long int value)
+int iflag_handler(const char **str, int len, int value)
 {
 	int i, count = 0,  plus = 0, dot, zero = 0, space, minus, width = 0;
 
