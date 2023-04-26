@@ -60,6 +60,5 @@ int print_array_all(int *, int);
 int print_array_val(int *, int);
 int count_array(int *, int);
 int print_recus(int, char);
-int iflag_handler(const char **, int *, int, long int);
 
 #endif
