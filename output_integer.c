@@ -3,7 +3,8 @@
  * iflag_handler - handles flag for int
  *
  * @str: pointer to string
- * @len: lenght of str to print
+ * @arr: array of values to print
+ * @len_arr: lenght of array
  * @value: value to be printed
  *
  * Return: number of printed value
@@ -12,8 +13,9 @@
 int iflag_handler(const char **str, int *arr, int len_arr, long int value)
 {
 	int count = 0, zero, minus = 0, width = 0, dot = precision(*str, 'i');
-	int len = count_array(arr, len_arr), space = flag_space(str, value), plus = flag_plus(str);
-	
+	int len = count_array(arr, len_arr), space = flag_space(str, value);
+	int plus = flag_plus(str);
+
 	(dot < 0 && **str == '0') ? (zero = justify(str, 'i')) : (zero = 0);
 	(**str == '-') ? (minus = justify(str, 'i')) : (width = justify(str, 'i'));
 	(value >= 0) ? (zero -= plus) : (zero--);
