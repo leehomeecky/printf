@@ -62,7 +62,8 @@ int iflag_handler(const char **str, int len, long int value)
 	}
 	if (dot > 0)
 	count += print_recus(dot, '0');
-	if (zero > 0);
+	if (zero > 0)
+	count += print_recus(zero, '0');
 	return (count);
 }
 
