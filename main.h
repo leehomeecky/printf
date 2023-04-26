@@ -51,5 +51,10 @@ int output_bigSX(char *X);
 int output_unsignedint(const char *, va_list arg);
 int output_octal(const char *, va_list arg);
 int hight(const char *, char);
+int justify(const char **, char);
+int flag_plus(const char **);
+int flag_hash(const char **);
+int flag_space(const char **);
+int precision(const char *, char);
 
 #endif
