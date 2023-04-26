@@ -69,7 +69,7 @@ int print_array_all(int *arr, int len)
 }
 
 /**
- * print_recus
+ * print_recus - function to print a value continusely
  *
  * @len: number of time to print the value
  * @value: value to print
