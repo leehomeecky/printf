@@ -13,11 +13,11 @@ int hight(const char *str, char s)
 {
 	int i, h = 0;
 
-	for (i = 0; str[i] != s; i++)
+	for (i = 0; *(str + i) != s; i++)
 	{
-		if (str[i] == 'h')
+		if (*(str + i) == 'h')
 			h = 1;
-		if (str[i] == 'l')
+		if (*(str + i) == 'l')
 			h = 2;
 	}
 	return (h);
@@ -36,9 +36,9 @@ int precision(const char *str, char s)
 {
 	int i, dot = 0, len = -1;
 
-	for (i = 0; str[i] != s; i++)
+	for (i = 0; *(str + i) != s; i++)
 	{
-		if (str[i] == '.')
+		if (*(str + i) == '.')
 		{
 			dot++;
 			if (len < 0)
@@ -46,8 +46,8 @@ int precision(const char *str, char s)
 		}
 		else if (dot > 0)
 		{
-			if (str[i] >= '0' && str[i] <= '9')
-				len = (len * 10) + (str[i] - '0');
+			if (*(str + i) >= '0' && *(str + i) <= '9')
+				len = (len * 10) + (*(str + i) - '0');
 		}
 	}
 	return (len);
