@@ -12,6 +12,7 @@
 int print_recus(int len, char value)
 {
 	int i = 0;
+
 	for (; i < len; i++)
 		my_putchar(value);
 	return (i);
